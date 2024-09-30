@@ -3,6 +3,7 @@ import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import TaskSearch from './TaskSearch';
 import useGetAllToDo from '../hooks/useGetAllToDo';
+import Loading from './Loading';
 
 function ToDoContainer() {
   const [searchTitle, setSearchTitle] = useState('');
@@ -24,11 +25,9 @@ function ToDoContainer() {
     <>
       <TaskSearch searchTitle={searchTitle} setSearchTitle={setSearchTitle} />
       <TaskForm onAddTask={handleAddTask} />
-      {isLoading ? (
-        <p>Завантаження</p>
-      ) : (
-        <TaskList tasks={filteredTasks} onDeleteTask={handleDeleteTask} />
-      )}
+     <Loading loading={isLoading}>
+     <TaskList tasks={filteredTasks} onDeleteTask={handleDeleteTask} />
+     </Loading>
     </>
   );
 }
