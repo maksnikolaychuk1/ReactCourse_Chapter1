@@ -16,7 +16,7 @@ function TaskForm({ onAddTask }) {
       title: title,
     };
 
-        console.log(task);
+    console.log(task);
     onAddTask(task);
     setTitle('');
     setError('');

@@ -6,7 +6,7 @@ function TaskSearch({ searchTitle, setSearchTitle }) {
   return (
     <div>
       <input
-                      type="text"
+        type="text"
         value={searchTitle}
         onChange={handlSearch}
         placeholder="Що хочете знайти?"
